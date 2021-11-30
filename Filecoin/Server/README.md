@@ -37,13 +37,13 @@ Two main endpoints are available.
 
 The first one is:
 ```bash
-$ GET http://<host>:port>/data/:cid
+$ GET http://<host>:<port>/data/:cid
 ```
 (where :cid is the unique identifier of the content hosted on Filecoin)
 
 The second one is:
 ```bash
-$ POST http://<host>:port>/data
+$ POST http://<host>:<port>/data
 ```
 (where the submitted data as part of the HTTP request is the content to be hosted on Filecoin)
 
