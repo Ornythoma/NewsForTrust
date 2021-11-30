@@ -1,4 +1,4 @@
-# Server
+# Contracts
 
 ## Table of Contents
 -   [Description](#description)
