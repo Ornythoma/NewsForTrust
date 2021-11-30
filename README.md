@@ -1,9 +1,8 @@
 
-# ChainedTrust
+# News For Trust
 
 
-
-ChainedTrust aims to provide a platform for certifying and incentivize experts' contributions and comments on publishing platforms valuing high-quality dialogue.
+NewsForTrust aims to provide a platform for certifying and incentivize experts' contributions and comments on publishing platforms valuing high-quality dialogue.
 
   
 
