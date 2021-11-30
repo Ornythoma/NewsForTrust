@@ -1,0 +1,33 @@
+{
+  "name": "filecoin-storage-server",
+  "version": "1.0",
+  "description": "Filecoin server to store and retrieve data",
+  "main": "./dist/index.js",
+  "author": "Emmanuel Kellner, Arbër Salihi",
+  "scripts": {
+    "clean": "ttsc --build --clean && shx rm -rf dist",
+    "build": "npm run clean && ttsc",
+    "start": "node -r ts-node/register -r tsconfig-paths/register ./dist/index.js",
+    "deploy": "npm run build && npm run start"
+  },
+  "devDependencies": {
+    "@types/config": "^0.0.39",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^14.14.37",
+    "@types/shelljs": "^0.8.9",
+    "shx": "^0.3.3",
+    "ts-loader": "^8.1.0",
+    "tsconfig-paths": "^3.12.0",
+    "ttypescript": "^1.5.12",
+    "typescript": "^4.3.5",
+    "typescript-transform-paths": "^2.2.3"
+  },
+  "dependencies": {
+    "@textile/powergate-client": "0.1.0-beta.10",
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "shelljs": "^0.8.4"
+  }
+}

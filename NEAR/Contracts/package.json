@@ -1,0 +1,15 @@
+{
+  "name": "near-contract-builder",
+  "version": "0.1.0",
+  "license": "(MIT AND Apache-2.0)",
+  "author": "Emmanuel Kellner, Arbër Salihi",
+  "scripts": {
+    "build": "asb",
+    "build:debug": "asb --target debug",
+    "deploy": "npm run build && near deploy",
+    "dev": "npm run build:debug && near dev-deploy"
+  },
+  "devDependencies": {
+    "near-sdk-as": "^3.2.3"
+  }
+}
