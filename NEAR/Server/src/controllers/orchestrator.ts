@@ -43,7 +43,7 @@ export async function AddArticleToRepository(article: Article, author: string): 
 export async function GetArticleFromRepository(identifier: string): Promise<Article> {
     await LoadAccount(`${config.get('near.contracts.repository.name')}.${config.get('near.contracts.repository.account')}`);
 
-    return JSON.parse(await (CONTRACTS['repository'] as any).GetArticle({ identifier }));
+    return await (CONTRACTS['repository'] as any).GetArticle({ identifier });
 }
 
 export async function AddCommentToRepository(comment: Comment, author: string): Promise<void> {

@@ -1,4 +1,5 @@
 import { readFileSync } from 'fs';
+import { omitBy as omit_by, isNil as is_nil } from 'lodash';
 import { exec, ShellString } from 'shelljs';
 
 import { ExecutionOptions, RecursivePartial } from '@server/helpers/types';
@@ -58,4 +59,16 @@ export function ReadFile(location: string): Buffer {
     } catch {
         throw new Error(`Could not read file: ${ location }`);
     }
+}
+
+// This function does not support complex objects where a custom function is needed to perform the sort
+export function Sort(object: { [key: string]: any }): Object {
+    return Object.keys(omit_by(object, is_nil)).sort().reduce((accumulator: Object, key: string) => {
+        if (object[key]) {
+            let element: any = (typeof object[key] == 'object') ? ((object[key] instanceof Array) ? [...object[key]].sort() : Sort(object[key])) : object[key];
+            return { ...accumulator, [key]: element };
+        } else {
+            return { ...accumulator };
+        }
+    }, {});
 }

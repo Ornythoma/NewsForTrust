@@ -1,9 +1,11 @@
-import { readFileSync } from 'fs';
+import { AxiosResponse } from 'axios';
+import { createHash as create_hash, Hash } from 'crypto';
 import { omitBy as omit_by, isNil as is_nil } from 'lodash';
+import { readFileSync } from 'fs';
 import { exec, ShellString } from 'shelljs';
 
-import { ExecutionOptions, RecursivePartial } from '@server/helpers/types';
-import { DEFAULT_EXECUTION_OPTIONS, TIMEOUT_BEFORE_FORCED_SHUTDOWN, SHUTDOWN_LISTENERS } from '@server/helpers/constants';
+import { ExecutionOptions, HTTPEndpoint, HTTPHeaders, HTTPMethod, HTTPParameters, RecursivePartial } from '@server/helpers/types';
+import { PROXY, DEFAULT_EXECUTION_OPTIONS, TIMEOUT_BEFORE_FORCED_SHUTDOWN, SHUTDOWN_LISTENERS } from '@server/helpers/constants';
 
 export function ReadFile(location: string): Buffer {
     try {
@@ -11,6 +13,21 @@ export function ReadFile(location: string): Buffer {
     } catch {
         throw new Error(`Could not read file: ${ location }`);
     }
+}
+
+export function ComputeSHA256(input: string | Object, salt?: string): string {
+	const hash: Hash = create_hash('sha256').update((input instanceof Object) ? JSON.stringify(input) : input);
+	if (salt) hash.update(ComputeSHA256(salt));
+	return hash.digest('hex');
+}
+
+export async function ExecuteHTTPRequest(endpoint: HTTPEndpoint, method: HTTPMethod, content?: { headers?: HTTPHeaders, parameters?: HTTPParameters }): Promise<AxiosResponse> {
+	try {
+		return await PROXY.request({ method: method, url: endpoint, ...(content?.['headers'] && { headers: content['headers'] }), ...(content?.['parameters'] && { data: content['parameters'] }) });
+	} catch (error) {
+		console.error(`[HELPER] An error occurred while executing HTTP request: ${error}`);
+        throw error;
+	}
 }
 
 export function ExecuteCommand(command: string, options: RecursivePartial<ExecutionOptions> = DEFAULT_EXECUTION_OPTIONS): ShellString {
@@ -60,6 +77,10 @@ export const FORCE_EXIT_FUNCTION = (timeout: number = TIMEOUT_BEFORE_FORCED_SHUT
         return process.exit(1);
     }, timeout).unref();
 };
+
+export function InsertNewlines(n: number = 1): void {
+    for (let i = 0; i < n; i++) console.log();
+}
 
 // This function does not support complex objects where a custom function is needed to perform the sort
 export function Sort(object: { [key: string]: any }): Object {

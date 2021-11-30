@@ -1,7 +1,7 @@
 {
-  "name": "filecoin-storage-server",
+  "name": "news-for-trust",
   "version": "1.0",
-  "description": "Filecoin server to store and retrieve data",
+  "description": "Main library of the NewsForTrust (NFT) project",
   "main": "./dist/index.js",
   "author": "Emmanuel Kellner, Arbër Salihi",
   "scripts": {
@@ -14,6 +14,7 @@
     "@types/config": "^0.0.39",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
+    "@types/inquirer": "^8.1.3",
     "@types/lodash": "^4.14.177",
     "@types/node": "^14.14.37",
     "@types/shelljs": "^0.8.9",
@@ -25,10 +26,11 @@
     "typescript-transform-paths": "^2.2.3"
   },
   "dependencies": {
-    "@textile/powergate-client": "0.1.0-beta.10",
+    "axios": "^0.24.0",
     "config": "^3.3.6",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "inquirer": "^8.2.0",
     "lodash": "^4.17.21",
     "shelljs": "^0.8.4"
   }

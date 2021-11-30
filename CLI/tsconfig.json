@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "commonjs",
+    "lib": ["ES2021", "dom"],
+    "outDir": "./dist",
+    "strict": true,
+    "baseUrl": "./src",
+    "paths": {"@server/*": ["*"]},
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      },
+      {
+        "transform": "typescript-transform-paths",
+        "afterDeclarations": true
+      }
+    ]
+  }
+}

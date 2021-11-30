@@ -10,7 +10,7 @@ module.exports = {
     'near': {
         network: 'testnet',
         credentials: `${ HOME_DIRECTORY }/.near-credentials`,
-        deployment: false,
+        deployment: true,
         endpoints: {
             node: 'https://rpc.testnet.near.org',
             wallet: 'https://wallet.testnet.near.org',
@@ -43,7 +43,7 @@ module.exports = {
             base: `${ HOME_DIRECTORY }/NEAR/Contracts/assembly`,
             provider: {
                 file: 'identity-provider/out/main.wasm',
-                name: 'id-doctors-test-3',
+                name: 'id-doctors-v2',
                 account: 'geneva-university-hospitals.testnet',
                 methods: {
                     viewMethods: ['RetrieveIdentity', 'GetMetadata', 'GetRole'],
@@ -52,7 +52,7 @@ module.exports = {
             },
             repository: {
                 file: 'repository/out/main.wasm',
-                name: 'repository-test-3',
+                name: 'repository-v2',
                 account: 'news-publisher.testnet',
                 methods: {
                     viewMethods: ['GetArticle', 'GetMetadataFromArticle', 'GetComment', 'GetMetadataFromComment', 'GetResponse', 'GetMetadataFromResponse'],
@@ -61,7 +61,7 @@ module.exports = {
             },
             network: {
                 file: 'network/out/main.wasm',
-                name: 'network-test-3',
+                name: 'network-v2',
                 account: 'encode2021.testnet',
                 methods: {
                     viewMethods: ['RetrievePublisher', 'RetrieveProvider', 'GetMetadata'],

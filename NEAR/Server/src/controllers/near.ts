@@ -72,6 +72,7 @@ export async function InitializeContracts(): Promise<void> {
             await ACCOUNT.deployContract(ReadFile(`${config.get('near.contracts.base')}/${contract['file']}`));
         }
 
+        await LoadAccount(contract['account']);
         CONTRACTS[reference] = new Contract(
             ACCOUNT,
             `${contract['name']}.${contract['account']}`,
