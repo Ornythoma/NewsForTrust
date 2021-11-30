@@ -1,0 +1,12 @@
+{
+    "identifier": "http://www.publisher.com/news/world/china-pneumonia-outbreak-virus-58420",
+    "publisher": "Publisher Inc.",
+    "date": "2020-01-08",
+    "author": "John Doe",
+    "content": "China officials alerted WHO about a new pneumonia outbreak identified two weeks ago now in the region of Wuhan. (...)",
+    "signature": "<digital signature of some of the fields>",
+    "metadata": {
+        "metadata1": "value1",
+        "metadata2": "value2"
+    }
+}
