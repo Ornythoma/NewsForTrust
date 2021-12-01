@@ -14,7 +14,9 @@ Contracts are built on the NEAR Platform and allow:
 - ID Providers to validate the real identity of an actor, linking their key to data representing their expertise field and level
 - Collections to manage their sets of articles and corresponding comments, and value and reward contributions
 
-  *For instructions specific to NEAR, IPFS, FILECOIN, see the following*:
+
+
+## For NEAR, IPFS & FILECOIN codebases
   
 For the Server managing Near contracts, it is hosted here: https://github.com/Ornythoma/NewsForTrust/tree/master/NEAR/Server
 Especially, the controllers (main logic) are there: https://github.com/Ornythoma/NewsForTrust/tree/master/NEAR/Server/src/controllers
