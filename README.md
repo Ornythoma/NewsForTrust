@@ -16,9 +16,13 @@ Contracts are built on the NEAR Platform and allow:
 
 
 
-## For NEAR, IPFS & FILECOIN codebases
+## For FILECOIN, NEAR codebases and CLI tools
   
-For the Server managing Near contracts, it is hosted here: https://github.com/Ornythoma/NewsForTrust/tree/master/NEAR/Server
+For Filecoin, the Server developed is hosted here: https://github.com/Ornythoma/NewsForTrust/tree/master/Filecoin/Server
+Especially, the controllers (main logic) are there: https://github.com/Ornythoma/NewsForTrust/tree/master/Filecoin/Server/src/controllers
+
+For NEAR, the smart contracts are here: https://github.com/Ornythoma/NewsForTrust/tree/master/NEAR/Contracts
+For the Server managing NEAR contracts, it is hosted here: https://github.com/Ornythoma/NewsForTrust/tree/master/NEAR/Server
 Especially, the controllers (main logic) are there: https://github.com/Ornythoma/NewsForTrust/tree/master/NEAR/Server/src/controllers
 With the appropriate configuration here: https://github.com/Ornythoma/NewsForTrust/blob/master/NEAR/Server/config/development.js
 
