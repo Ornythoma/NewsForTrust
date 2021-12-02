@@ -30,7 +30,7 @@ For NEAR:
 
 For the CLI tool to manage the whole logic (submission of articles and comments to Filecoin (content) and NEAR (metadata)), we use:
 - this repository : https://github.com/Ornythoma/NewsForTrust/tree/master/CLI .
--specifically, the logic related to the CLI is hosted in this file: https://github.com/Ornythoma/NewsForTrust/blob/master/CLI/src/controllers/cli.ts
+- specifically, the logic related to the CLI is hosted in this file: https://github.com/Ornythoma/NewsForTrust/blob/master/CLI/src/controllers/cli.ts
 
 ## DEVELOPMENT 
 - TypeScript
